@@ -16,24 +16,23 @@ const notes = [
 ]
 
 const noteAboutToday = {
-    id: 3,
     subject: 'JavaScript',
     date: '11-16',
     feeling: 'okay',
     timeSpent: '1 day',
 }
 
-notes.push(noteAboutToday);
-
-const searchTerm = 'good'
-
-for (const note of notes) {
-    if (note.feeling === searchTerm) {
-        console.log(`Note ${note.id}
-        ${note.date}
-        I learned ${note.subject}.
-        I spent ${note.timeSpent} working on it.
-        I felt ${note.feeling}
-        `)
+const createNote = (array, date, subject) => {
+    item = {
+        id: array.length + 1, 
+        name: date,
+        sunject: subject,
+        dateCreated: Date()
     }
-}    
+    array.push(item)
+    return item
+}
+
+createNote(notes, "11-16", "JavaScript")
+
+console.log(notes)
